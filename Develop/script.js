@@ -25,10 +25,66 @@ var specialCharaters = ['!','\"','#','$','%','&','\'','(',')','*','+',',','-','.
 console.log(specialCharaters[1],specialCharaters[6], specialCharaters[23]);
 
 
+// Create a prompt to ask how many characters in the password you would like.
+
+// Make sure it is > 8  and < 128.
+
+// if character is less than < or over 128 then start over.
+
+// promt to ask " do you want numbers?"
+
+// prompt to ask "do you want special charachters?"
+
+
+//promt to ask "do you want to include uppercase letters"
+
+
+//record options inputed to var
 
 
 
+//if(!hasLowercase && !hasNumbers && !hasUpperCase && !hasSpecialCharacters ){
+  // need to alert
+//  ("Please reenter with valid paramenters. May need to reload the page.");
+//}
 
+
+var options = {
+
+  length: length,
+  hasLowercase: true,
+  hasNumbers: true,
+  hasUpperCase: true,
+  hasSpecialCharacters: true,
+
+}
+// create function for getting random
+
+function getRandomChar(array) { 
+  return array[Math.floor(math.floor*array.length)]
+
+}
+
+
+// Create a generate function password
+var possibleCharacters = [];
+function generatePassword(){
+  // need gaurentee of at least one type selected
+  //need an array for final password
+  // need array for gaurenteee 
+  // need an array for possible characters
+
+  // for every character type selected you need to concat the existing character array into the possible array
+
+  if (options.hasSpecialCharacters){
+    possibleCharacters = possibleCharacters.concat(specialCharaters);
+    getRandomChar(specialCharaters)
+  }
+
+
+}
+
+generatePassword();
 
 
 // Write password to the #password input
