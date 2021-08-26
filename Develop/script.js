@@ -3,26 +3,18 @@ var generateBtn = document.querySelector("#generate");
 
 // Define all the possible array types like letter numbers and special characters.
 
-//All lower case character letters with a console log checking them
+//All lower case character letters 
 var lowerCasedLetters =[
   "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-//console.log(lowerCasedLetters[2]);
-
-//All Upper case character letters with a console log checking them
-
+//All Upper case character letters 
 var upperCasedLetters =['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-//console.log(upperCasedLetters[2]);
-
-//All numbers with a console log checking them
-
+//All numbers 
 var allNumbers =['0','1','2','3','4','5','6','7','8','9'];
-//console.log(allNumbers[2]);
-
-//All Special characters with a console log checking them
-
+//All Special characters 
 var specialCharaters = ['!','"','#','$','%','&','\'','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[','\\',']','^','_','`','{','|','}','~'];
 // Check to make sure escape sequences work :)
 //console.log(specialCharaters[1],specialCharaters[6], specialCharaters[23]);
+
 
 var possibleCharacters = [];
 var finalPassword = [];
@@ -51,24 +43,18 @@ var finalPassword = [];
 //}
 // My final password array
 
-
 var options = {
-
-  length: 12,
+  length: length,
   hasLowercase: true,
   hasNumbers: true,
   hasUpperCase: true,
   hasSpecialCharacters: true,
-
 }
-// create function for getting random
+// create function for getting random input from array
 
 function getRandomStuff(array) { 
   return array[Math.floor(Math.random() *array.length)];
-
 }
-
-
 // Create a generate function password
 
 var finalPassword =[];
