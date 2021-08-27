@@ -44,7 +44,7 @@ var finalPassword = [];
 // My final password array
 
 var options = {
-  length: length,
+  length: 16,
   hasLowercase: true,
   hasNumbers: true,
   hasUpperCase: true,
@@ -57,7 +57,6 @@ function getRandomStuff(array) {
 }
 // Create a generate function password
 
-var finalPassword =[];
 
 function generatePassword(){
   // need gaurentee of at least one type selected
@@ -82,12 +81,19 @@ function generatePassword(){
   if (options.hasLowercase){
     possibleCharacters = possibleCharacters.concat(lowerCasedLetters);
     finalPassword.push(getRandomStuff(lowerCasedLetters));
-    console.log(finalPassword);
   }
-
+  for (var i = finalPassword.length; i< options.length; i++){
+    var finalResult = getRandomStuff(possibleCharacters);
+    finalPassword.push(finalResult)
+  }
 }
 
 generatePassword();
+var gwpassword = finalPassword.join("");
+
+
+console.log(finalPassword);
+console.log(gwpassword);
 
 // Write password to the #password input
 function writePassword() {
