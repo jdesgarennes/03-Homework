@@ -1,6 +1,5 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
 // Define all the possible array types like letter numbers and special characters.
 
 //All lower case character letters 
@@ -21,50 +20,58 @@ var finalPassword = [];
 
 // Create a prompt to ask how many characters in the password you would like.
 
-// Make sure it is > 8  and < 128.
-
-// if character is less than < or over 128 then start over.
-
-// promt to ask " do you want numbers?"
-
-// prompt to ask "do you want special charachters?"
-
-
-//promt to ask "do you want to include uppercase letters"
-
-
-//record options inputed to var
 
 
 
-//if(!hasLowercase && !hasNumbers && !hasUpperCase && !hasSpecialCharacters ){
-  // need to alert
-//  ("Please reenter with valid paramenters. May need to reload the page.");
-//}
-// My final password array
+
+
+function getparams(){
+var passLength = prompt("Please enter the desired password length between 8 and 128 characters.");
+  if(Number.isNaN(passLength)){
+  alert("Please input a Number only!");
+  return;
+}
+if(passLength <8){
+  alert("Password length is to short, Must be at least 8 characters!");
+  return
+}
+if(passLength >128){
+  alert(" Password length is too large, Must be less than 129 characters!")
+}
+var hasSpecialCharacters = confirm("Click to confirm that you want Special characters in password.");
+
+var hasUpperCase = confirm("Click to confirm that you want UPPERCASE letters in password.");
+
+var hasLowercase = confirm("Click to confirm that you want lowercase letters in password.");
+
+var hasNumbers = confirm("Click to confirm that you want numbers in password.");
+
+if(!hasLowercase && !hasNumbers && !hasUpperCase && !hasSpecialCharacters ){
+  alert("You must enter at least one type of option for password");
+  return;
+}
+
 
 var options = {
-  length: 16,
-  hasLowercase: true,
-  hasNumbers: true,
-  hasUpperCase: true,
-  hasSpecialCharacters: true,
+    length: passLength,
+    hasLowercase: hasLowercase,
+    hasNumbers: hasNumbers,
+    hasUpperCase: hasUpperCase,
+    hasSpecialCharacters: hasSpecialCharacters,
+  }
+return options;
 }
-// create function for getting random input from array
 
+// create function for getting random input from array
 function getRandomStuff(array) { 
   return array[Math.floor(Math.random() *array.length)];
 }
-// Create a generate function password
 
 
+// Create a generate password function
 function generatePassword(){
-  // need gaurentee of at least one type selected
-  //need an array for final password
-  // need array for gaurenteee 
-  // need an array for possible characters
 
-  // for every character type selected you need to concat the existing character array into the possible array
+  var options = getparams();
 
   if (options.hasSpecialCharacters){
     possibleCharacters = possibleCharacters.concat(specialCharaters);
@@ -86,10 +93,13 @@ function generatePassword(){
     var finalResult = getRandomStuff(possibleCharacters);
     finalPassword.push(finalResult)
   }
+return finalPassword.join("");
+
 }
 
 generatePassword();
 var gwpassword = finalPassword.join("");
+
 
 
 console.log(finalPassword);
