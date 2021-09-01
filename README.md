@@ -9,4 +9,4 @@ asks the user via prompts how many and if they whan upper, lower case , numbers 
 
 Screenshot:
 
-![password generator](.pwgen.jpg)
+![password generator](pwgen.jpg)
