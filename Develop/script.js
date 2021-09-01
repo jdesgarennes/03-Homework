@@ -1,5 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var clearBtn = document.querySelector("#clear");
 // Define all the possible array types like letter numbers and special characters.
 
 //All lower case character letters 
@@ -102,12 +103,18 @@ console.log(gwpassword);
 function writePassword() {
   var password = genPassword();
   var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
   
-
+  passwordText.value = password;
 }
+// function to clear passwod textbox
+function clearPassword() {
+ 
+  var passwordText = document.querySelector("#password");
+  
+  passwordText.value = "";
+}
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
+clearBtn.addEventListener("click", clearPassword);
